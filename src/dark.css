@@ -1,0 +1,8 @@
+body {
+    background-color: #124cdfa1;
+    color: white; /* Ensures text is readable */
+  }
+  
+  .navbar {
+    margin-bottom: 20px;
+  }

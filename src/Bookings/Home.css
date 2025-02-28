@@ -1,0 +1,51 @@
+.home-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    padding: 20px;
+  }
+  
+  .navbar-brand {
+    color: white;
+    font-size: 24px;
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-item {
+    display: inline;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .home-content {
+    margin-top: 50px;
+  }
+  
+  .book-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .book-button:hover {
+    background-color: #0056b3;
+  }
