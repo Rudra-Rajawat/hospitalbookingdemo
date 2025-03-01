@@ -379,10 +379,10 @@ const Department = () => {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseModal}>
+          <Button variant="danger" onClick={handleCloseModal}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleAddDepartment}>
+          <Button variant="warning" onClick={handleAddDepartment}>
             {isEditing ? 'Update' : 'Submit'}
           </Button>
         </Modal.Footer>

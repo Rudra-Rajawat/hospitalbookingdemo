@@ -1,14 +1,13 @@
 import './App.css';
-import Patient from './Bookings/Patient';
 import Hospital from './Bookings/Hospital';
-import Booking from './Bookings/BookingDetails';
 import Depatment from './Bookings/Depatment';
 import { Link, Route, Routes } from 'react-router-dom';
-import Login from './Bookings/Login';
 import Registration from './Bookings/Registration';
 import Home from './Bookings/Home';
 import { AuthProvider } from './AuthContext';
-import Signin from './Signin';
+import Signin from './Bookings/Signin';
+import BookAppointment from './Bookings/BookAppointment';
+import BookingDetails from './Bookings/BookingDetails';
 
 function App() {
   return (
@@ -31,10 +30,10 @@ function App() {
       <Route path="/" Component={Home}> </Route>
         <Route path="/login" Component={Signin}> </Route>
         <Route path="/registration" Component={Registration}> </Route>
-        <Route path="/bookAppointment" Component={Patient}> </Route>
+        <Route path="/bookAppointment" Component={BookAppointment}> </Route>
         <Route path="/home" Component={Home}> </Route>
         <Route path="/hospital" Component={Hospital}> </Route>
-        <Route path="/booking" Component={Booking}> </Route>
+        <Route path="/booking" Component={BookingDetails}> </Route>
         <Route path="/department" Component={Depatment}> </Route>
       </Routes>
       </AuthProvider>

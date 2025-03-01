@@ -86,15 +86,19 @@
 
 // export default Signin;
 
+// 
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { AuthContext } from "./AuthContext";
+import { AuthContext } from "../AuthContext";
+import './Login.css';
+import { Form, Button, Dropdown, DropdownButton } from 'react-bootstrap';
 
 const Signin = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const { setAuth } = useContext(AuthContext);
+
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -133,47 +137,31 @@ const Signin = () => {
   };
 
   return (
-    <div className="authenticateUser">
-      <h2 className="formTitle">Log In</h2>
-      <form className="addUserForm" onSubmit={handleSubmit}>
-        <div className="mb-3 inputGroup">
-          <div className="mb-3">
-            <label htmlFor="name" className="form-label">
-              Name
-            </label>
-            <input
+    <div className="login-wrapper">
+      <div className="login-Form-container">
+        <h2 className="login-title">Login</h2>
+        <Form onSubmit={handleSubmit} className="login-Form">
+          <Form.Group className="mb-3" controlId="FormBasicName">
+            <Form.Label></Form.Label>
+            <Form.Control
               type="text"
-              id="name"
-              className="form-control"
-              placeholder="Enter your name"
+              placeholder="Enter name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              required
             />
-          </div>
-
-          <div className="mb-3">
-            <label htmlFor="password" className="form-label">
-              Password
-            </label>
-            <input
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="FormBasicEmail">
+            <Form.Label></Form.Label>
+            <Form.Control
               type="password"
-              id="password"
-              className="form-control"
-              placeholder="Enter your password"
+              placeholder="Enter password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-             
             />
-          </div>
-          <div className="d-flex justify-content-center">
-            <button type="submit" className="btn btn-primary">
-              Log In
-            </button>
-          </div>
-        </div>
-      </form>
-      <div className="login">
+          </Form.Group>
+          <Button variant="primary" type="submit" className="login-button">
+          Register</Button>
+      </Form>
         <p>
           Do not have an account? <Link to="/signup">Sign Up</Link>
         </p>
@@ -183,3 +171,4 @@ const Signin = () => {
 };
 
 export default Signin;
+
