@@ -35,7 +35,7 @@ function App() {
         <Route path="/home" Component={Home}> </Route>
         <Route path="/hospital" Component={Hospital}> </Route>
         <Route path="/booking" Component={Booking}> </Route>
-        {/* <Route path="/department" Component={Depatment}> </Route> */}
+        <Route path="/department" Component={Depatment}> </Route>
       </Routes>
       </AuthProvider>
  

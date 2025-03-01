@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ImageSlider from './ImageSlider'; // Make sure to import the ImageSlider component
+// import ImageSlider from './ImageSlider'; // Make sure to import the ImageSlider component
 import './Home.css';
 
 function Home() {
@@ -23,7 +23,7 @@ function Home() {
       <div className="home-content">
         <h2>Welcome to the Appointment Booking System</h2>
         <p>Book your appointments easily and quickly.</p>
-        <ImageSlider /> {/* Add the ImageSlider component here */}
+        {/* <ImageSlider /> Add the ImageSlider component here */}
       </div>
     </div>
   );
