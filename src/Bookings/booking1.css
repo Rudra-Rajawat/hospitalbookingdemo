@@ -1,0 +1,67 @@
+.booking-details-wrapper {
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .booking-details-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .booking-details-title {
+    margin-bottom: 20px;
+  }
+  
+  .booking-details-table {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* More transparent table background */
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .booking-details-table th,
+  .booking-details-table td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .booking-details-table th {
+    background-color: rgba(0, 123, 255, 0.8); /* Bootstrap primary color with transparency */
+    color: white;
+  }
+  
+  .booking-details-table tbody tr:nth-child(odd) {
+    background-color: rgba(0, 123, 255, 0.1); /* Light blue for odd rows */
+  }
+  
+  .booking-details-table tbody tr:nth-child(even) {
+    background-color: rgba(0, 123, 255, 0.05); /* Lighter blue for even rows */
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  
+  .pagination li {
+    display: inline;
+    padding: 0 10px;
+  }
+  
+  .pagination li a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .pagination li.active a {
+    font-weight: bold;
+    color: #0056b3;
+  }

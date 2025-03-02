@@ -160,7 +160,7 @@ const Signin = () => {
             />
           </Form.Group>
           <Button variant="primary" type="submit" className="login-button">
-          Register</Button>
+          Login</Button>
       </Form>
         <p>
           Do not have an account? <Link to="/signup">Sign Up</Link>
