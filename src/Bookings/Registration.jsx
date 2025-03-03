@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button, Dropdown, DropdownButton } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
@@ -9,8 +9,7 @@ function Registration() {
     name: '',
     email: '',
     password: '',
-    confirmPassword: '',
-    role: 'PATIENT'
+    confirmPassword: ''
   });
 
   const navigate = useNavigate();
@@ -18,12 +17,12 @@ function Registration() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Construct the payload
+    // Construct the payload with the role set to "PATIENT" by default
     const payload = {
       name: values.name,
       email: values.email,
       password: values.password,
-      roles: values.role
+      roles: "PATIENT" 
     };
 
     axios.post('http://localhost:9096/auth/new', payload)
@@ -40,7 +39,6 @@ function Registration() {
         <h2 className="login-title">Register</h2>
         <Form onSubmit={handleSubmit} className="login-form">
           <Form.Group className="mb-3" controlId="formBasicName">
-            <Form.Label></Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter name"
@@ -50,7 +48,6 @@ function Registration() {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label></Form.Label>
             <Form.Control
               type="email"
               placeholder="Enter email"
@@ -60,7 +57,6 @@ function Registration() {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label></Form.Label>
             <Form.Control
               type="password"
               placeholder="Password"
@@ -70,25 +66,12 @@ function Registration() {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
-            <Form.Label></Form.Label>
             <Form.Control
               type="password"
               placeholder="Confirm Password"
               value={values.confirmPassword}
               onChange={(e) => setValues({ ...values, confirmPassword: e.target.value })}
             />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formBasicRole">
-            <Form.Label></Form.Label>
-            <DropdownButton
-              id="dropdown-basic-button"
-              title={values.role}
-              onSelect={(e) => setValues({ ...values, role: e })}
-            >
-              <Dropdown.Item eventKey="ADMIN">ADMIN</Dropdown.Item>
-              <Dropdown.Item eventKey="PATIENT">PATIENT</Dropdown.Item>
-            </DropdownButton>
           </Form.Group>
 
           <Button variant="primary" type="submit" className="login-button">
@@ -104,6 +87,116 @@ function Registration() {
 }
 
 export default Registration;
+
+
+// Working code which with admin and user role
+
+// import React, { useState } from 'react';
+// import { Form, Button, Dropdown, DropdownButton } from 'react-bootstrap';
+// import { Link, useNavigate } from 'react-router-dom';
+// import axios from 'axios';
+// import './Login.css';
+
+// function Registration() {
+//   const [values, setValues] = useState({
+//     name: '',
+//     email: '',
+//     password: '',
+//     confirmPassword: '',
+//     role: 'PATIENT'
+//   });
+
+//   const navigate = useNavigate();
+
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+
+//     // Construct the payload
+//     const payload = {
+//       name: values.name,
+//       email: values.email,
+//       password: values.password,
+//       roles: values.role
+//     };
+
+//     axios.post('http://localhost:9096/auth/new', payload)
+//       .then((res) => {
+//         console.log(res);
+//         navigate('/login');
+//       })
+//       .catch((err) => console.log(err));
+//   };
+
+//   return (
+//     <div className="login-wrapper">
+//       <div className="login-form-container">
+//         <h2 className="login-title">Register</h2>
+//         <Form onSubmit={handleSubmit} className="login-form">
+//           <Form.Group className="mb-3" controlId="formBasicName">
+//             <Form.Label></Form.Label>
+//             <Form.Control
+//               type="text"
+//               placeholder="Enter name"
+//               value={values.name}
+//               onChange={(e) => setValues({ ...values, name: e.target.value })}
+//             />
+//           </Form.Group>
+
+//           <Form.Group className="mb-3" controlId="formBasicEmail">
+//             <Form.Label></Form.Label>
+//             <Form.Control
+//               type="email"
+//               placeholder="Enter email"
+//               value={values.email}
+//               onChange={(e) => setValues({ ...values, email: e.target.value })}
+//             />
+//           </Form.Group>
+
+//           <Form.Group className="mb-3" controlId="formBasicPassword">
+//             <Form.Label></Form.Label>
+//             <Form.Control
+//               type="password"
+//               placeholder="Password"
+//               value={values.password}
+//               onChange={(e) => setValues({ ...values, password: e.target.value })}
+//             />
+//           </Form.Group>
+
+//           <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
+//             <Form.Label></Form.Label>
+//             <Form.Control
+//               type="password"
+//               placeholder="Confirm Password"
+//               value={values.confirmPassword}
+//               onChange={(e) => setValues({ ...values, confirmPassword: e.target.value })}
+//             />
+//           </Form.Group>
+
+//           <Form.Group className="mb-3" controlId="formBasicRole">
+//             <Form.Label></Form.Label>
+//             <DropdownButton
+//               id="dropdown-basic-button"
+//               title={values.role}
+//               onSelect={(e) => setValues({ ...values, role: e })}
+//             >
+//               <Dropdown.Item eventKey="ADMIN">ADMIN</Dropdown.Item>
+//               <Dropdown.Item eventKey="PATIENT">PATIENT</Dropdown.Item>
+//             </DropdownButton>
+//           </Form.Group>
+
+//           <Button variant="primary" type="submit" className="login-button">
+//             Register
+//           </Button>
+//         </Form>
+//         <p className="redirect-link">
+//           Already have an account? <Link to="/login">Login here</Link>
+//         </p>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Registration;
 
 //  registration code with validation
 
