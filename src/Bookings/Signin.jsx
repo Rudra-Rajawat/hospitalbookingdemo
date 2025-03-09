@@ -35,7 +35,7 @@ const Signin = () => {
       localStorage.setItem('auth_id', id);
       localStorage.setItem('auth_token', jwtToken);
       localStorage.setItem('auth_role', role);
-        navigate("/home");
+      navigate("/BookAppointment");
     } catch (error) {
       console.log(error)
     }

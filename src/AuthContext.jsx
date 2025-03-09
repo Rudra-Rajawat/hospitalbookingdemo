@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useEffect } from 'react';
  
 export const AuthContext = createContext();
@@ -14,7 +13,7 @@ export const AuthProvider = ({ children }) => {
         localStorage.setItem('auth_id', auth.id);
         localStorage.setItem('auth_token', auth.token);
         localStorage.setItem('auth_role', auth.role);
-    }, [auth]);
+    },[auth]);
  
     return (
         <AuthContext.Provider value={{ auth, setAuth }}>
