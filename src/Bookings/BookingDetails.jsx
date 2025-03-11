@@ -8,7 +8,7 @@ import './booking1.css';
 function BookingDetails() {
   const [bookings, setBookings] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
-  const [bookingsPerPage] = useState(20);
+  const [bookingsPerPage] = useState(10);
   const { auth } = useContext(AuthContext);
 
   // States for editing a booking
